@@ -287,14 +287,65 @@ var chrysanthemum = new Flower("pink", 65, false);
 
 Such that the `chrysanthemum` is pink with 65 petals and doesn't smell good.
 
+##Challenges
+
+1. Refactor the `Flower` constructor to enable this code:
+
+```javascript
+var chrysanthemum = new Flower("pink", 65, false);
+```
+
 <details>
-<summary>Challenge: how could we refactor the original flower constructor to accomplish this?</summary>
+<summary>Example solution</summary>
 
 ```javascript
 function Flower(color, petals, smells) {
     this.color = color;
     this.petals = petals;
     this.smells = smells;
+}
+```
+</details>
+
+2. How could we refactor the arguments the `Flower` constructor accepts such that it takes in an object that contains all the attributes of the instance we are initializing?
+
+Refactor the constructor to enable this code:
+
+```javascript
+var options = {petals: 65, color: "pink", smells: false};
+var chrysanthemum = new Flower(options);
+```
+
+<details>
+<summary>Example solution</summary>
+
+```javascript
+function Flower(options) {
+    this.color = options.color;
+    this.petals = options.petals;
+    this.smells = options.smells;
+}
+```
+</details>
+
+3. We want the petal count to default to 10, if not otherwise specified. Enable this code:
+
+```javascript
+var options = {color: "pink", smells: false};
+var chrysanthemum = new Flower(options);
+// inspect instance
+chrysanthemum;
+// => Flower {color: "pink", petals: 10, smells: false}
+```
+
+<details>
+<summary>Example solution</summary>
+
+```javascript
+function Flower(options) {
+    this.color = options.color;
+    this.petals = options.petals || 10;
+    this.smells = options.smells;
 }
 ```
 </details>
