@@ -213,19 +213,9 @@ lily.bloom === rose.bloom // false
 
 But we want their bloom methods to be the same!
 
-##Customization
+##Customization Challenges
 
-Wouldn't it be nice if at the moment we instantiate a flower we could also define its properties?
-
-```javascript
-var chrysanthemum = new Flower("pink", 65, false);
-```
-
-Such that the `chrysanthemum` is pink with 65 petals and doesn't smell good.
-
-##Challenges
-
-1. Refactor the `Flower` constructor to enable this code:
+* Wouldn't it be nice if at the moment we instantiate a flower we could also define its properties? Refactor the `Flower` constructor to enable this code:
 
 ```javascript
 var chrysanthemum = new Flower("pink", 65, false);
@@ -243,9 +233,7 @@ function Flower(color, petals, smells) {
 ```
 </details>
 
-2. How could we refactor the arguments the `Flower` constructor accepts such that it takes in an object that contains all the attributes of the instance we are initializing?
-
-Refactor the constructor to enable this code:
+* How could we refactor the arguments the `Flower` constructor accepts such that it takes in an object that contains all the attributes of the instance we are initializing? Refactor the constructor to enable this code:
 
 ```javascript
 var options = {petals: 65, color: "pink", smells: false};
@@ -264,7 +252,7 @@ function Flower(options) {
 ```
 </details>
 
-3. We want the petal count to default to 10, if not otherwise specified. Enable this code:
+* How can we make the petal count to default to 10, if not otherwise specified? Enable this code:
 
 ```javascript
 var options = {color: "pink", smells: false};
