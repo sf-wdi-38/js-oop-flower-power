@@ -213,70 +213,6 @@ lily.bloom === rose.bloom // false
 
 But we want their bloom methods to be the same!
 
-##Prototypes
-
-By adding the method `bloom` to the constructor's **prototype** we can enable all flowers to share a `bloom` method, or any other method for that matter! The prototype is simply the object that can be referenced by all the flower instances.
-
-```javascript
-function Flower() {
-    this.color = "red";
-    this.petals = 32;
-    this.smells= true;
-}
-
-Flower.prototype.bloom = function() {
-  console.log("Look at me!");
-}
-```
-
-Now try running the same test to see if both flowers share the same `bloom` method.
-
-```javascript
-var lily = new Flower();
-var rose = new Flower();
-
-lily.bloom === rose.bloom // true
-```
-
-###Benefits
-
-- Less wasted memory
-- Single source of truth
-
->What if we edit the prototype *after* the flower instances have been created? Will they update their behavior accordingly?
-
-###More methods
-
-Let's add some more methods to the flower constructor.
-
-```javascript
-function Flower() {
-    this.color = "red";
-    this.petals = 32;
-    this.smells= true;
-}
-
-Flower.prototype.bloom = function() {
-  console.log("Look at me!");
-}
-Flower.prototype.smellsGood = function() {
-// use `this` to access the instance's attributes
-  if (this.smells) {
-    return 'This flower smells amazing!';
-  } else {
-    return 'What a noxious weed!';
-  }
-}
-Flower.prototype.describe = function() {
-  console.log("This flower is " + this.color + ".");    
-}
-```
-Methods can also access properties within the object with the `this` identifier rather than using dot or bracket notation.
-
-###Quick Challenge - Wilt & water
-- Create a wilt() method that decrements each flower by one petal. :(
-- Create a water() method that increments each flower by one petal. :)
-
 ##Customization
 
 Wouldn't it be nice if at the moment we instantiate a flower we could also define its properties?
@@ -349,6 +285,70 @@ function Flower(options) {
 }
 ```
 </details>
+
+##Prototypes
+
+By adding the method `bloom` to the constructor's **prototype** we can enable all flowers to share a `bloom` method, or any other method for that matter! The prototype is simply the object that can be referenced by all the flower instances.
+
+```javascript
+function Flower() {
+    this.color = "red";
+    this.petals = 32;
+    this.smells= true;
+}
+
+Flower.prototype.bloom = function() {
+  console.log("Look at me!");
+}
+```
+
+Now try running the same test to see if both flowers share the same `bloom` method.
+
+```javascript
+var lily = new Flower();
+var rose = new Flower();
+
+lily.bloom === rose.bloom // true
+```
+
+###Benefits
+
+- Less wasted memory
+- Single source of truth
+
+>What if we edit the prototype *after* the flower instances have been created? Will they update their behavior accordingly?
+
+###More methods
+
+Let's add some more methods to the flower constructor.
+
+```javascript
+function Flower() {
+    this.color = "red";
+    this.petals = 32;
+    this.smells= true;
+}
+
+Flower.prototype.bloom = function() {
+  console.log("Look at me!");
+}
+Flower.prototype.smellsGood = function() {
+// use `this` to access the instance's attributes
+  if (this.smells) {
+    return 'This flower smells amazing!';
+  } else {
+    return 'What a noxious weed!';
+  }
+}
+Flower.prototype.describe = function() {
+  console.log("This flower is " + this.color + ".");    
+}
+```
+Methods can also access properties within the object with the `this` identifier rather than using dot or bracket notation.
+
+###Quick Challenge - Wilt & water
+- Create a wilt() method that decrements each flower by one petal. :(
+- Create a water() method that increments each flower by one petal. :)
 
 ##Modeling Flowers
 
