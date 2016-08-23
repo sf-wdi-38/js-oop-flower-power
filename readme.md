@@ -224,10 +224,8 @@ function Flower() {
     this.smells= true;
 }
 
-Flower.prototype = {
-  bloom: function() {
-    console.log("Look at me!");
-  }
+Flower.prototype.bloom = function() {
+  console.log("Look at me!");
 }
 ```
 
@@ -258,21 +256,19 @@ function Flower() {
     this.smells= true;
 }
 
-Flower.prototype = {
-  bloom: function() {
-    console.log("Look at me!");
-  },
-  smellsGood: function() {
-  // use `this` to access the instance's attributes
-    if (this.smells) {
-      return 'This flower smells amazing!';
-    } else {
-      return 'What a noxious weed!';
-    }
-  },
-  describe: function() {
-    console.log("This flower is " + this.color + ".");    
+Flower.prototype.bloom = function() {
+  console.log("Look at me!");
+}
+Flower.prototype.smellsGood = function() {
+// use `this` to access the instance's attributes
+  if (this.smells) {
+    return 'This flower smells amazing!';
+  } else {
+    return 'What a noxious weed!';
   }
+}
+Flower.prototype.describe = function() {
+  console.log("This flower is " + this.color + ".");    
 }
 ```
 Methods can also access properties within the object with the `this` identifier rather than using dot or bracket notation.
@@ -345,24 +341,21 @@ Flower.crossPollinate = function(momFlower, dadFlower) {
 }
 
 // instance methods
-Flower.prototype = {
-  bloom: function() {
-    console.log("Look at me!");
-  },
-  smellsGood: function(answer) {
-    if (answer) {
-      return 'This flower smells amazing!';
-    } else {
-      return 'What a noxious weed!';
-    }
-  },
-  describe: function() {
-    // Demonstrates use of local object variables
-    // use `this` to access the instance's attributes
-    console.log("This flower is " + this.color + ".");    
+Flower.prototype.bloom = function() {
+  console.log("Look at me!");
+}
+Flower.prototype.smellsGood = function(answer) {
+  if (answer) {
+    return 'This flower smells amazing!';
+  } else {
+    return 'What a noxious weed!';
   }
 }
-
+Flower.prototype.describe = function() {
+  // Demonstrates use of local object variables
+  // use `this` to access the instance's attributes
+  console.log("This flower is " + this.color + ".");    
+}
 
 var lily = new Flower("blue", 32, true);
 var rose = new Flower("green", 12, true);
