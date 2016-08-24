@@ -468,6 +468,17 @@ var rily = Flower.crossPollinate(rose, lily);
    }
    ```
   </details>
+  
+1. Create an `addWater` method for a vase that calls the `water` method of each flower inside.
+    <details><summary>sample solution</summary>
+   ```js
+   Vase.prototype.addWater = function(){
+     this.flowers.forEach(function(flower){
+       flower.water();
+     });
+   }
+   ```
+  </details>
 
 1. Feel free to add more properties or methods for your `Vase` object type.
 
