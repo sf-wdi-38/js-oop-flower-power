@@ -25,7 +25,8 @@ Object oriented programming is a common pattern throughout many languages. It's 
 <!-- call out the skills that are prerequisites -->
 *Before this workshop, developers should already be able to:*
 
-- Comfortably implement JavaScript objects & functions
+- Comfortably create and manipulate JavaScript objects 
+- Comfortably write and interpret JavaScript functions
 
 ### Review: What is an Object?
 
