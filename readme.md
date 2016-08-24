@@ -25,55 +25,9 @@ Object oriented programming is a common pattern throughout many languages. It's 
 <!-- call out the skills that are prerequisites -->
 *Before this workshop, developers should already be able to:*
 
-- Comfortably create and manipulate JavaScript objects 
-- Comfortably write and interpret JavaScript functions
+- Create and manipulate JavaScript objects 
+- Write and interpret JavaScript functions
 
-### Review: What is an Object?
-
-Here's a truncated version of the cohort data we have been using.  Take some time to study the structure and the data types within the data object.
-
-```javascript
-var data = {
-  school: "General Assembly",
-  city: "San Francisco",
-  course: "Web Development Immersive",
-  course_abbreviation: "WDI",
-  cohort: 31,
-  room: 4,
-  github_schedule: "https://github.com/sf-wdi-31/schedule",
-  developers:[
-    {
-      first_name: "Alicia",
-      last_name: "Brown",
-      github_username: "cabrown91"
-    },
-    {
-      last_name: "Bak",
-      first_name: "Sera",
-      github_username: "serabakpak"
-    },
-    {
-      first_name: "Abbas",
-      last_name: "Baig",
-      github_username: "abbasbaigali"
-    }
-  ]
-};
-
-
-```
-
-**We can assume that an Object is a collection of properties (key & value pairs) that all have some sort of relationship, connected logically to one another.**
-
-#### Check for Understanding
-
-1. Based on our experience in class so far and your familiarity with the above object, consider the following as you read further:
-	- How many of the properties in `cohort` are Strings? 
- 	- How many of the properties are Arrays?
- 	- If there is an array, what data type(s) are the elements inside?
- 	- How would we access the second developer's GitHub username?
-
- 
 ###Constructors
 For relatively straightforward and small objects, it is perfectly fine to declare them as a variable and define them, as we did with our cohort's `data`.  This is known as a *Literal* object definition.  
 
