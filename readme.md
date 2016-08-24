@@ -349,15 +349,24 @@ Now we should have a flower instance for each of our actual flowers.
 
 Let's source the best new properties that were created on their constructors and integrate them into a universal flower constructor.
 
-##Cross-Pollination
+### Independent Practice: Cross-Pollination
 
-Now that we are awesome Flower experts, lets try our hand at cross pollinating two flower objects. Cross pollinating is beyond the realm of an individual flower and could therefore live on the Flower constructor itself. Another examples of this would be `create`, `new`, or `destroy`. These are all *meta* actions of a flower; a flower cannot create itself! They are called **static methods**.
+Now that we are awesome flower experts, lets try our hand at cross pollinating two flower objects. Cross pollinating is beyond the realm of an individual flower. We could createa `crossPollinate` instance method, but we can also attach the method to the Flower constructor itself. This would capture the fact that the `crossPollinate` method isn't a behavior of one specific flower. Methods added to an object type instead of an instance are called **static methods**. Other examples could be `create` or `destroy`. These are all *meta* actions of a flower; a flower cannot create itself! 
 
-To exemplify this let's create a static method (also sometimes refered to as a class method) called `crossPollinate` as opposed to the instance methods we've been making (i.e. `bloom`)
+To exemplify this, let's create a static method (also sometimes refered to as a class method) called `crossPollinate`. We'll have to set it up a little differently than the instance methods we've been making (i.e. `bloom`), because we want to add this new method directly to the `Flower` constructor object.
 - The method will take two flower instances as arguments.    
-- Return a new flower intance that is a mix of both "parent" colors. (i.e. red, yellow = "red-yellow"; we don't care about the color wheel).
+- `crossPollinate` will create a new flower intance that is a mix of both "parent" colors. (i.e. red, yellow = "red-yellow"; don't worry about the color wheel).
 - Make the new petal count an average between the two parents' petal counts.
-- The smellPretty gene is recessive, unfortunately. This means that a flower will smell pretty IF and only IF both flowers smell pretty.  
+- The smellPretty gene is recessive, unfortunately. This means that a flower will smell pretty IF and ONLY IF both flowers smell pretty. 
+
+```js
+// starter code
+Flower.crossPollinate = function(/* what parameters are needed? */){
+  var newFlower;
+  // set up and make the newFlower!
+  return newFlower;
+};
+```
 
 <details>
 <summary>Example solution</summary>
@@ -371,12 +380,12 @@ function Flower(color, petals, smells) {
 }
 
 // static methods
-Flower.crossPollinate = function(momFlower, dadFlower) {
-  var color = momFlower.color + "-" + dadFlower.color;
-  var petals = (momFlower.petals + dadFlower.petals) / 2;
-  var smells = momFlower.smellsGood && dadFlower.smellsGood;
-  var babyFlower = new Flower(color, petals, smells);
-  return babyFlower;
+Flower.crossPollinate = function(flower1, flower2) {
+  var color = flower1.color + "-" + flower2.color;
+  var petals = (flower1.petals + flower2.petals) / 2;
+  var smells = flower1.smellsGood && flower2.smellsGood;
+  var newFlower = new Flower(color, petals, smells);
+  return newFlower;
 }
 
 // instance methods
@@ -399,17 +408,43 @@ Flower.prototype.describe = function() {
 var lily = new Flower("blue", 32, true);
 var rose = new Flower("green", 12, true);
 
-var rily = Flower.crossPollinate(rose, lily)
+var rily = Flower.crossPollinate(rose, lily);
 ```
 
 </details>
 
 *Thought experiment: Maybe we create a different intermediary object, called Bee, which would facilitate cross-pollination and return a new flower? Flowers don't just bash their heads together and make new flowers in the real world, they need bees!  What are some methods we could assign to a Bee object?*
 
+<details>
+  <summary>some ideas</summary>
+  The `Bee` object type could have: 
+  - a method to mix flowers:  `crossPollinate(flower1, flower2)`
+  - a method to help the bee describe where to find honey for other bees: `dance(location)` 
+</details>
 
-##Closing Thoughts
 
-* Why is using a prototype?
+<!--### Uber Challenge-->
+
+<!--Create a method within the Flower object that will render a description of your flower along with all of its vital statistics we have collected as well as an image to a simple website.-->
+
+<!--Name your webpage "The San Francisco Seventh Annual General Assembly Parade of Flowers."-->
+<!--If we are consistent botanists, our objects will have the same methods and properties.-->
+<!--Share your team's flower object on slack, and we will all be able to include all the flowers in our Parade of Flowers website!-->
+
+
+### Independent Practice: Object-In-Object
+
+<img src="https://cloud.githubusercontent.com/assets/3254910/17948758/fe31c9e4-6a06-11e6-8c59-c68d975c02a8.png" alt="flower vase image from homeheavenimages on flickr" width=80%>
+
+
+Create a vase object which contains an array of flower objects and a `capacity` attribute that says how many flowers the vase can hold.
+
+Create a method `placeFlower` that accepts a flower object as a parameter and inserts the flower into the array. What if the vase is too small? Update your method so that it checks whether the vase is already holding its capacity of flowers before it adds the extra flower. 
+
+
+###Closing Thoughts
+
+* Why is using a prototype beneficial?
 * Would you typically put the methods or attributes in the prototype?
 * When would we use static methods?
 
