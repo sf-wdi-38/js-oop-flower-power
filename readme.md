@@ -18,8 +18,8 @@ Object oriented programming is a common pattern throughout many languages. It's 
 *After this workshop, developers will be able to:*
 
 - Build practical and useful objects using Javascript constructors
-- Demonstrate a working knowledge of  object properties and methods
-- Convert previous projects to utilize Object Oriented Programming techniques
+- Demonstrate a working knowledge of object properties and methods
+- Design object types in JavaScript using Object Oriented Programming techniques
 
 ### Where should we be now?
 <!-- call out the skills that are prerequisites -->
@@ -128,7 +128,7 @@ Let's break down a couple concepts introduced with this new line of code:
 - We call the `Flower` function, which creates an object with the properties from the construtor.  Our object is ready to go!
 
 
-![tulip from Clare Black (Identity Photogr@phy) on flickr](https://cloud.githubusercontent.com/assets/3254910/17949473/5e17a92a-6a0a-11e6-90fb-2294c3d1b6e9.png)
+<img alt="tulip from Clare Black (Identity Photogr@phy) on flickr" src="https://cloud.githubusercontent.com/assets/3254910/17949473/5e17a92a-6a0a-11e6-90fb-2294c3d1b6e9.png" width="50%">
 
 
 Accessing the properties of our new `tulip` object is the same as accessing our properties from any other object: we can use either dot or bracket notation.
@@ -163,7 +163,7 @@ lily.petals = 6;
 
 That's more like it!  To change the value of the lily object properties, we simply access them with dot or bracket notation.  We then follow with a single equals assignment operator and give a new appropriate value.  Couldn't be easier!
 
-<img src = https://seniorhikerphotos.files.wordpress.com/2012/06/lilysarina12052301.jpg width = 75%>
+<img src="https://seniorhikerphotos.files.wordpress.com/2012/06/lilysarina12052301.jpg" width="50%" alt="yellow lily">
 
 ###Object Methods
 One of the most powerful features of Javascript Objects are Methods.  Methods are *"functions"* that are predefined and built into an object.  We all know and love `Array` methods like `forEach()`, `map()`, `filter()`, and `reduce()`; these are all methods of the `Array` object.  We use arrays so much that Javascript gives us the shorthand `[]` syntax to create them instead of calling the `Array` constructor with `new` to make instances, like we did above with the flowers.  Thanks, Javascript!
@@ -191,7 +191,7 @@ sunflower.bloom();
 // prints out "Look at me!"
 ```
 
-![sunflowers by skyseeker on flickr](https://cloud.githubusercontent.com/assets/3254910/17949651/461f09f2-6a0b-11e6-96fb-31c01b5f978a.png)
+<img alt="sunflowers by skyseeker on flickr" src="https://cloud.githubusercontent.com/assets/3254910/17949651/461f09f2-6a0b-11e6-96fb-31c01b5f978a.png" width="50%">
 
 
 There's an issue with  code above. We're creating multiple flowers, but the attributes `color`, `petal`, and `smells` all start with the same values. It makes sense for these properties to be different and customizable for each flower. 
@@ -268,7 +268,6 @@ function Flower(options) {
 
 
 
-
 ##Prototypes
 
 Flowers can now be created with unique attributes, which is awesome. On the other hand, you may notice that all flowers could share the `bloom` method. Right now, though, each flower instance has a separate bloom method.
@@ -281,6 +280,8 @@ lily.bloom === rose.bloom // false
 ```
 
 We want their bloom methods to be the same! Next, we'll see how to avoid creating an entirely new `bloom` method every time we make a new flower. 
+
+<img src="https://media.giphy.com/media/10nccX8vZPEeA0/giphy.gif" alt="blooming flower gif" width="50%">
 
 By adding the method `bloom` to the constructor's **prototype** we can enable all flowers to share a `bloom` method, or any other method for that matter! Shared attributes can also be added to the prototype, but they're less common.  The prototype is simply an object that can be referenced by all the flower instances.
 
