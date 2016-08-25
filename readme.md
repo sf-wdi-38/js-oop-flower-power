@@ -398,7 +398,6 @@ var rily = Flower.crossPollinate(rose, lily);
 **Constructors**
 
 * variables and functions are declared once for each instance
-* functions have access to "private" variables declared within the constructor's scope
 * when you update the constructor, previously created instances DON'T update
 * data is "embedded" in each instance
 
@@ -413,6 +412,11 @@ var rily = Flower.crossPollinate(rose, lily);
 * adds variable or function directly to the instance
 * overwrites constructor properties/methods by replacing them
 * overwrites prototype properties/methods by being earlier on the lookup chain!
+
+**Static variables and functions**
+* add values or behaviors directly to the constructor function
+* these attributes are not specific to any one instance but apply to the type 
+* examples: Math.PI, Apartments.all
 
 
 
