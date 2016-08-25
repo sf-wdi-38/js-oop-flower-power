@@ -11,7 +11,7 @@ Market: SF
 <!-- framing the "why" in big-picture/real world examples -->
 *This workshop is important because:*
 
-Object oriented programming is a common pattern throughout many languages. It's patterns will enable you to write more readable, organized, and declarative programs.
+Object oriented programming is a common pattern throughout many languages. Its patterns will enable you to write more readable, organized, and declarative programs.
 
 ### What are the objectives?
 <!-- specific/measurable goal for students to achieve -->
