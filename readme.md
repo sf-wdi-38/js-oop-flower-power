@@ -393,6 +393,28 @@ var rily = Flower.crossPollinate(rose, lily);
 <!--If we are consistent botanists, our objects will have the same methods and properties.-->
 <!--Share your team's flower object on slack, and we will all be able to include all the flowers in our Parade of Flowers website!-->
 
+###Constructor and Prototype Review
+
+**Constructors**
+
+* variables and functions are declared once for each instance
+* functions have access to "private" variables declared within the constructor's scope
+* when you update the constructor, previously created instances DON'T update
+* data is "embedded" in each instance
+
+**Prototypes**
+
+* all instances share the same function and variable declarations
+* when you update the prototype, previously created instances DO get the updates
+* data is "referenced" from the prototype copy
+
+**Instance variables and functions**
+
+* adds variable or function directly to the instance
+* overwrites constructor properties/methods by replacing them
+* overwrites prototype properties/methods by being earlier on the lookup chain!
+
+
 
 ### Independent Practice: Object-In-Object
 
@@ -446,3 +468,4 @@ var rily = Flower.crossPollinate(rose, lily);
 
 - [Lynda.com's "What is object-oriented language" video](https://www.youtube.com/watch?v=SS-9y0H3Si8)
 - [MDN's Introduction to Object-Oriented JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript)
+- [MDN's Reference on Inheritance and the Prototype Chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
