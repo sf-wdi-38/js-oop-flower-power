@@ -20,6 +20,7 @@ Object oriented programming is a common pattern throughout many languages. Its p
 - Build practical and useful objects using Javascript constructors
 - Demonstrate a working knowledge of object properties and methods
 - Design object types in JavaScript using Object Oriented Programming techniques
+- Understand the difference between pseudo-classical and prototypal inheritance in JavaScript
 
 ### Where should we be now?
 <!-- call out the skills that are prerequisites -->
