@@ -20,6 +20,7 @@ Object oriented programming is a common pattern throughout many languages. Its p
 - Build practical and useful objects using Javascript constructors
 - Demonstrate a working knowledge of object properties and methods
 - Design object types in JavaScript using Object Oriented Programming techniques
+- Understand the difference between pseudo-classical and prototypal inheritance in JavaScript
 
 ### Where should we be now?
 <!-- call out the skills that are prerequisites -->
@@ -414,6 +415,7 @@ var rily = Flower.crossPollinate(rose, lily);
 * overwrites prototype properties/methods by being earlier on the lookup chain!
 
 **Static variables and functions**
+
 * add values or behaviors directly to the constructor function
 * these attributes are not specific to any one instance but apply to the type 
 * examples: Math.PI, Apartments.all
@@ -461,6 +463,105 @@ var rily = Flower.crossPollinate(rose, lily);
   </details>
 
 1. Feel free to add more properties or methods for your `Vase` object type.
+
+###Protoypal vs Pseudo-Classical Inheritance
+
+So far, we have talked mostly about what is considered _pseudo-classical inheritance_ when we extend properties of an object or class to a new instance. This is called _pseudo-classical_ for JavaScript because it mimics the structure of inheritance in more traditional class-based languages such as Java or C++.
+
+In JavaScript, some programmers and engineers consider _prototypal inheritance_ to be more appropriate, clear, and/or efficient in JavaScript. This is a matter of opinion of course, but it's worthwhile to examine the difference.
+
+Let's continue the lovely flower examples.
+
+Here's an example of _pseudo-classical_ inheritance:
+
+```js
+function Flower(name, numPetals, color, seasonality) {
+	this.name = name;
+	this.numPetals = numPetals;
+	this.color = color;
+	this.seasonality = seasonality;
+}
+
+Flower.prototype.bloom = function() {
+    return "A " + this.color + " " + this.name " has " + this.numPetals.toString() + " petals."
+};
+
+var Daisy = new Flower("daisy", 34, "white and yellow", "perrenial");
+
+var Tulip = new Flower("tulip", 6, "red", "annual");
+```
+
+ <details><summary>What do you notice?</summary>
+ 
+ * There is a class that serves as a blueprint.
+ * The flower instances called `Daisy` and `Tulip` "build" flowers to the specs of the blueprint.
+ 
+   _Note: This is also called a constructor pattern. Using the `.prototype` method is also a way of implementing pseudo-classical inheritance._
+ </details>
+
+
+...and here's the same idea, but with _prototypal inheritance_:
+
+```js
+var Flower = {
+	bloom: function {
+		return "A " + this.color + " " + this.name " has " + this.numPetals.toString() + " petals."
+	}
+}
+
+var Daisy = Object.create(Flower, {
+	name: {
+		value: "daisy"
+		}
+	},
+	numPetals: {
+		value: 34
+		}
+	},
+	color: {
+		value: "white and yellow"
+		}
+	},
+	seasonality: {
+		value: "perrenial"
+		}
+	}
+});
+
+/* alternatively to the above 
+Object.create() explicit method,
+you may use a factory function: */
+
+function flowerFactory(name, numPetals, color, seasonality) {
+	var flower = Object.create(Flower);
+	flower.name = name;
+	flower.numPetals = numPetals;
+	flower.color = color;
+	flower.seasonality = seasonality;
+	return flower;
+}
+
+var Tulip = flowerFactory("tulip", 6, "red", "annual");
+
+
+```
+
+ <details><summary>What's different here?</summary>
+ 
+ * New flowers are created from the exisiting Flower variable.
+ * We build flowers based on existing flowers.
+ * We can use a factory method to create instances of flowers.
+</details>
+
+So which should you use? The answer is a matter of opinion. Here is one popular [StackOverflow post](http://stackoverflow.com/questions/2800964/benefits-of-prototypal-inheritance-over-classical) on the matter.
+
+###Independent Practice
+
+* _Discuss:_ What are the relative merits and drawbacks of each type of inheritance in JavaScript? Make a pro's and con's list for each.
+
+* _Bonus:_ Demonstrate your knowledge of each type of inheritance by writing a code for a `Mushroom` "class" that can be inherited from, and building a few instances such as `Shitake` and `Nightshade`.
+
+
 
 ###Closing Thoughts
 
