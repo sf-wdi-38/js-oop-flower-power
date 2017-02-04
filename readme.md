@@ -1,5 +1,5 @@
 <!--
-Creator: <Name>
+Creator: SF WDI. `class` syntax added by Michelle.
 Market: SF
 -->
 
@@ -29,8 +29,52 @@ Object oriented programming is a common pattern throughout many languages. Its p
 - Create and manipulate JavaScript objects 
 - Write and interpret JavaScript functions
 
+### Review
+Work with a partner and write your answers.
+1. What is an object? How does it hold data? What are two ways we can access things inside of an object?
+2. If an object contains a function, how can we call it?
+<details>
+<summary>Click for an example object</summary>
+```javascript
+var obj = {
+  name: "Michelle",
+  employer: "GeneralAssembly",
+  sayHello: function() {
+    console.log("Hello!");
+  }
+
+};
+// what code would you write here to call the function?
+```
+</details>
+2. What is the `this` keyword used for?
+3. Think back to looping through an object to put data in your page. If you had this array of objects, would you be able to easily loop through it and add the URLs to the page? Why or why not?
+```javascript
+var myArray = [
+  {
+    url: "www.google.com",
+    description: "The searching people"
+    // other data
+  },
+  {
+    URL: "www.generalassemb.ly",
+    info: "The teaching people"
+    // other data
+  },
+  {
+    link: "www.jquery.com",
+    details: "The $ people",
+    // other data
+  },
+  {
+    pageUrl: "developer.mozilla.org",
+    pageDescription: "The Firefox people",
+    // other data
+  }
+];
+```
 ###Constructors
-For relatively straightforward and small objects, it is perfectly fine to declare them as a variable and define them, as we did with our cohort's `data`.  This is known as a *Literal* object definition.  
+For relatively straightforward and small objects, it is perfectly fine to declare them as a variable and define them.  This is known as a *Literal* object definition.
 
 Here's a flower using the *Literal* method:
 
@@ -58,7 +102,7 @@ rose.petals = 16;
 
 The `rose` will share all characteristics of the original `flower`, except it will have 16 petals because we overwrote that property.
 
-Now let's explore a flower using the preferred **constructor** syntax:
+Using `Object.create` is limited, though. It means we have to remember what all of the properties are that we want to change, and change them manually for that object. Instead, we prefer to use the **constructor** syntax. Let's explore what a Flower constructor might look like:
  
  ```javascript
  // constructor object definition
@@ -302,8 +346,7 @@ Methods can also access properties within the object with the `this` identifier 
 
 ###Independent Practice: Modeling Flowers
 
-Take 10 minutes to create a flower instance based on the flower on your table. Decide amongst your
-tablemates the type of flower, the flower's main color, number of petals, and whether or not it smells pretty. Think up some other possible properties or methods and add them too!
+Take 10 minutes to create a flower instance based on the flower on your table. Decide amongst your tablemates the type of flower, the flower's main color, number of petals, and whether or not it smells pretty. Think up some other possible properties or methods and add them too!
 
 ...
 
@@ -466,9 +509,9 @@ var rily = Flower.crossPollinate(rose, lily);
 
 ###Protoypal vs Pseudo-Classical Inheritance
 
-So far, we have talked mostly about what is considered _pseudo-classical inheritance_ when we extend properties of an object or class to a new instance. This is called _pseudo-classical_ for JavaScript because it mimics the structure of inheritance in more traditional class-based languages such as Java or C++.
+So far, we have talked mostly about what is considered _pseudo-classical inheritance_ when we extend properties of an object or class to a new instance. This is called _pseudo-classical_ for JavaScript because it mimics the structure of inheritance in more traditional class-based languages such as Java or C++. It's also similar to how inheritance will work in Ruby.
 
-In JavaScript, some programmers and engineers consider _prototypal inheritance_ to be more appropriate, clear, and/or efficient in JavaScript. This is a matter of opinion of course, but it's worthwhile to examine the difference.
+Some programmers and engineers consider _prototypal inheritance_ to be more appropriate, clear, and/or efficient in JavaScript. This is a matter of opinion of course, but it's worthwhile to examine the difference.
 
 Let's continue the lovely flower examples.
 
@@ -565,7 +608,6 @@ So which should you use? The answer is a matter of opinion. Here is one popular 
 
 ###Closing Thoughts
 
-* Why is using a prototype beneficial?
 * Would you typically put the methods or attributes in the prototype?
 * When would we use static methods?
 
