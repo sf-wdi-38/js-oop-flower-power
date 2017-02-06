@@ -31,6 +31,7 @@ Object oriented programming is a common pattern throughout many languages. Its p
 
 ### Review
 Work with a partner and write your answers.
+
 1. What is an object? How does it hold data? What are two ways we can access things inside of an object?
 2. If an object contains a function, how can we call it?
 <details>
@@ -47,8 +48,8 @@ var obj = {
 // what code would you write here to call the function?
 ```
 </details>
-2. What is the `this` keyword used for?
-3. Think back to looping through an object to put data in your page. If you had this array of objects, would you be able to easily loop through it and add the URLs to the page? Why or why not?
+3. What is the `this` keyword used for?
+4. Think back to looping through an object to put data in your page. If you had this array of objects, would you be able to easily loop through it and add the URLs to the page? Why or why not?
 ```javascript
 var myArray = [
   {
