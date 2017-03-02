@@ -354,7 +354,8 @@ Now we should have a flower instance for each of our actual flowers.
 
 Let's source the best new properties that were created on constructors and integrate them into a universal flower constructor.
 
-### Independent Practice: Cross-Pollination
+### Independent Practice: 
+-Pollination
 
 Now that we are awesome flower experts, lets try our hand at cross pollinating two flower objects. Cross pollinating is beyond the realm of an individual flower. We could create a `crossPollinate` instance method on the prototype, but we can also attach the method to the Flower constructor itself. This would capture the fact that the `crossPollinate` method isn't a behavior of one specific flower. Methods added to an object type instead of an instance are called **static methods**. Other examples could be `create` or `destroy`. These are all *meta* actions of a flower; a flower cannot create itself! 
 
@@ -367,7 +368,7 @@ To exemplify this, let's create a static method (also sometimes refered to as a 
 
 ```js
 // starter code
-Flower.crossPollinate = function(/* what parameters are needed? */){
+Flower.prototype.crossPollinate = function(/* what parameters are needed? */){
   var newFlower;
   // set up and make the newFlower!
   return newFlower;
