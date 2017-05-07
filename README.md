@@ -1,21 +1,15 @@
-<!--
-Creator: SF WDI. `class` syntax added by Michelle.
-Market: SF
--->
 
-![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
 
-#Flower Power: Object Oriented Programming in JavaScript
+
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Flower Power: Object Oriented Programming in JavaScript
 
 ### Why is this important?
-<!-- framing the "why" in big-picture/real world examples -->
 *This workshop is important because:*
 
 Object oriented programming is a common pattern throughout many languages. Its patterns will enable you to write more readable, organized, and declarative programs.
 
 ### What are the objectives?
-<!-- specific/measurable goal for students to achieve -->
-*After this workshop, developers will be able to:*
+*After this workshop, students will be able to:*
 
 - Build practical and useful objects using Javascript constructors
 - Demonstrate a working knowledge of object properties and methods
@@ -23,8 +17,7 @@ Object oriented programming is a common pattern throughout many languages. Its p
 - Understand the difference between pseudo-classical and prototypal inheritance in JavaScript
 
 ### Where should we be now?
-<!-- call out the skills that are prerequisites -->
-*Before this workshop, developers should already be able to:*
+*Before this workshop, students should already be able to:*
 
 - Create and manipulate JavaScript objects 
 - Write and interpret JavaScript functions
@@ -37,10 +30,10 @@ Work with a partner and write your answers.
 
 ```javascript
 var obj = {
-  name: "Michelle",
-  employer: "GeneralAssembly",
+  name: "Justin Castilla",
+  employer: "General Assembly",
   sayHello: function() {
-    console.log("Hello!");
+    console.log("Hello, my name is " + this.name");
   }
 
 };
@@ -48,7 +41,8 @@ var obj = {
 ```
 
 3. What is the `this` keyword used for?
-4. Think back to looping through an object to put data in your page. If you had this array of objects, would you be able to easily loop through it and add the URLs to the page? Why or why not?
+4. Think back to looping through an array - if you wanted to put data in your page fron an array of objects, would you be able to easily loop through it and add the URLs to the page? Why or why not? How would you go about doing this? Use pseudocode.
+
 ```javascript
 var myArray = [
   {
@@ -73,7 +67,7 @@ var myArray = [
   }
 ];
 ```
-###Constructors
+### Constructors
 For relatively straightforward and small objects, it is perfectly fine to declare them as a variable and define them.  This is known as a *Literal* object definition.
 
 Here's a flower using the *Literal* method:
@@ -127,7 +121,7 @@ Let's break down a couple concepts introduced with this new line of code:
 - We call the `Flower` function, which creates an object with the properties from the construtor.  Our object is ready to go!
 
 
-<img alt="tulip from Clare Black (Identity Photogr@phy) on flickr" src="https://cloud.githubusercontent.com/assets/3254910/17949473/5e17a92a-6a0a-11e6-90fb-2294c3d1b6e9.png" width="50%">
+![](https://cloud.githubusercontent.com/assets/3254910/17949473/5e17a92a-6a0a-11e6-90fb-2294c3d1b6e9.png)
 
 
 Accessing the properties of our new `tulip` object is the same as accessing our properties from any other object: we can use either dot or bracket notation.
@@ -138,7 +132,7 @@ var petalCount = tulip.petals; // 32
 var smellsNice = tulip.smells; //true
 ```
 
-If we wanted to create yet ANOTHER flower, all we have to do is call our function just like we did above.  This time, lets make an object called `lily`.
+If we wanted to create yet **another** flower, all we have to do is call our function just like we did above.  This time, lets make an object called `lily`.
 
 ```javascript
 var lily = new Flower();
@@ -162,9 +156,9 @@ lily.petals = 6;
 
 That's more like it!  To change the value of the lily object properties, we simply access them with dot or bracket notation.  We then follow with a single equals assignment operator and give a new appropriate value.  Couldn't be easier!
 
-<img src="https://seniorhikerphotos.files.wordpress.com/2012/06/lilysarina12052301.jpg" width="50%" alt="yellow lily">
+![](https://seniorhikerphotos.files.wordpress.com/2012/06/lilysarina12052301.jpg)
 
-###Object Methods
+### Object Methods
 One of the most powerful features of Javascript Objects are Methods.  Methods are *"functions"* that are predefined and built into an object.  We all know and love `Array` methods like `forEach()`, `map()`, `filter()`, and `reduce()`; these are all methods of the `Array` object.  We use arrays so much that Javascript gives us the shorthand `[]` syntax to create them instead of calling the `Array` constructor with `new` to make instances, like we did above with the flowers.  Thanks, Javascript!
 
 Lets make a simple method in the flower constructor that outputs to the console whenever we call it.
@@ -195,7 +189,7 @@ sunflower.bloom();
 
 There's an issue with  code above. We're creating multiple flowers, but the attributes `color`, `petal`, and `smells` all start with the same values. It makes sense for these properties to be different and customizable for each flower. 
 
-###Independent Practice: Customization
+### Independent Practice: Customization
 
 Wouldn't it be nice if at the moment we instantiate a flower we could also define its properties? Refactor the `Flower` constructor to enable this code:
 
@@ -267,7 +261,7 @@ function Flower(options) {
 
 
 
-##Prototypes
+## Prototypes
 
 Flowers can now be created with unique attributes, which is awesome. On the other hand, you may notice that all flowers could share the `bloom` method. Right now, though, each flower instance has a separate bloom method.
 
@@ -305,14 +299,14 @@ var rose = new Flower();
 lily.bloom === rose.bloom // true
 ```
 
-####Benefits
+#### Benefits
 
 - Less wasted memory
 - Single source of truth
 
 >What if we edit the prototype *after* the flower instances have been created? Will they update their behavior accordingly?
 
-####More methods
+#### More methods
 
 Let's add some more methods to the flower constructor.
 
@@ -340,11 +334,11 @@ Flower.prototype.describe = function() {
 ```
 Methods can also access properties within the object with the `this` identifier rather than using dot or bracket notation.
 
-####Check for Understanding: `wilt` and `water`
+#### Check for Understanding: `wilt` and `water`
 - Create a `wilt()` method that decrements a flower's petal count by one. :(
 - Create a `water()` method that increments a flower's petal count by one. :)
 
-###Independent Practice: Modeling Flowers
+### Independent Practice: Modeling Flowers
 
 Take 10 minutes to create a flower instance based on the flower on your table. Decide amongst your tablemates the type of flower, the flower's main color, number of petals, and whether or not it smells pretty. Think up some other possible properties or methods and add them too!
 
@@ -355,8 +349,7 @@ Now we should have a flower instance for each of our actual flowers.
 Let's source the best new properties that were created on constructors and integrate them into a universal flower constructor.
 
 ### Independent Practice: 
--Pollination
-
+**Pollination**
 Now that we are awesome flower experts, lets try our hand at cross pollinating two flower objects. Cross pollinating is beyond the realm of an individual flower. We could create a `crossPollinate` instance method on the prototype, but we can also attach the method to the Flower constructor itself. This would capture the fact that the `crossPollinate` method isn't a behavior of one specific flower. Methods added to an object type instead of an instance are called **static methods**. Other examples could be `create` or `destroy`. These are all *meta* actions of a flower; a flower cannot create itself! 
 
 To exemplify this, let's create a static method (also sometimes refered to as a class method) called `crossPollinate`. We'll have to set it up a little differently than the instance methods we've been making (i.e. `bloom`), because we want to add this new method directly to the `Flower` constructor object.
@@ -430,15 +423,9 @@ var rily = Flower.crossPollinate(rose, lily);
 </details>
 
 
-<!--### Uber Challenge-->
 
-<!--Create a method within the Flower object that will render a description of your flower along with all of its vital statistics we have collected as well as an image to a simple website.-->
 
-<!--Name your webpage "The San Francisco Seventh Annual General Assembly Parade of Flowers."-->
-<!--If we are consistent botanists, our objects will have the same methods and properties.-->
-<!--Share your team's flower object on slack, and we will all be able to include all the flowers in our Parade of Flowers website!-->
-
-###Constructor and Prototype Review
+### Constructor and Prototype Review
 
 **Constructors**
 
@@ -508,7 +495,7 @@ var rily = Flower.crossPollinate(rose, lily);
 
 1. Feel free to add more properties or methods for your `Vase` object type.
 
-###Protoypal vs Pseudo-Classical Inheritance
+### Protoypal vs Pseudo-Classical Inheritance
 
 So far, we have talked mostly about what is considered _pseudo-classical inheritance_ when we extend properties of an object or class to a new instance. This is called _pseudo-classical_ for JavaScript because it mimics the structure of inheritance in more traditional class-based languages such as Java or C++. It's also similar to how inheritance will work in Ruby.
 
@@ -599,7 +586,7 @@ var Tulip = flowerFactory("tulip", 6, "red", "annual");
 
 So which should you use? The answer is a matter of opinion. Here is one popular [StackOverflow post](http://stackoverflow.com/questions/2800964/benefits-of-prototypal-inheritance-over-classical) on the matter.
 
-###Independent Practice
+### Independent Practice
 
 * _Discuss:_ What are the relative merits and drawbacks of each type of inheritance in JavaScript? Make a pro's and con's list for each.
 
@@ -607,7 +594,7 @@ So which should you use? The answer is a matter of opinion. Here is one popular 
 
 
 
-###Closing Thoughts
+### Closing Thoughts
 
 * Would you typically put the methods or attributes in the prototype?
 * When would we use static methods?
