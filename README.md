@@ -33,7 +33,7 @@ var obj = {
   name: "Justin Castilla",
   employer: "General Assembly",
   sayHello: function() {
-    console.log("Hello, my name is " + this.name";
+    console.log("Hello, my name is " + this.name);
   }
 
 };
