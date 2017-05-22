@@ -156,7 +156,7 @@ That's more like it!  To change the value of the lily object properties, we simp
 ![](https://seniorhikerphotos.files.wordpress.com/2012/06/lilysarina12052301.jpg)
 
 ### Object Methods
-One of the most powerful features of Javascript Objects are Methods.  Methods are *"functions"* that are predefined and built into an object.  We all know and love `Array` methods like `forEach()`, `map()`, `filter()`, and `reduce()`; these are all methods of the `Array` object.  We use arrays so much that Javascript gives us the shorthand `[]` syntax to create them instead of calling the `Array` constructor with `new` to make instances, like we did above with the flowers.  Thanks, Javascript!
+One of the most powerful features of Javascript Objects are Methods.  Methods are *functions* that are predefined and built into an object.  We all know and love `Array` methods like `forEach()`, `map()`, `filter()`, and `reduce()`; these are all methods of the `Array` object.  We use arrays so much that Javascript gives us the shorthand `[]` syntax to create them instead of calling the `Array` constructor with `new` to make instances, like we did above with the flowers.  Thanks, Javascript!
 
 Lets make a simple method in the flower constructor that outputs to the console whenever we call it.
 
@@ -251,10 +251,10 @@ We want their bloom methods to be the same! Next, we'll see how to avoid creatin
 By adding the method `bloom` to the constructor's **prototype** we can enable all flowers to share a `bloom` method, or any other method for that matter! Shared attributes can also be added to the prototype, but they're less common.  The prototype is simply an object that can be referenced by all the flower instances.
 
 ```javascript
-function Flower() {
-    this.color = "red";
-    this.petals = 32;
-    this.smells= true;
+function Flower(color, petals, smells) {
+   this.color = color;
+   this.petals = petals;
+   this.smells= smells;
 }
 
 Flower.prototype.bloom = function() {
@@ -283,10 +283,10 @@ lily.bloom === rose.bloom // true
 Let's add some more methods to the flower constructor.
 
 ```javascript
-function Flower() {
-    this.color = "red";
-    this.petals = 32;
-    this.smells= true;
+function Flower(color, petals, smells) {
+   this.color = color;
+   this.petals = petals;
+   this.smells= smells;
 }
 
 Flower.prototype.bloom = function() {
