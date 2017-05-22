@@ -39,7 +39,7 @@ var obj = {
 ```
 
 3. What is the `this` keyword used for?
-4. Think back to looping through an array - if you wanted to put data in your page fron an array of objects, would you be able to easily loop through it and add the URLs to the page? Why or why not? How would you go about doing this? Use pseudocode.
+4. Think back to looping through an array - if you wanted to put data in your page from this array of objects, would you be able to easily loop through it and add the URLs to the page? Why or why not? How would you go about doing this? Use pseudocode.
 
 ```javascript
 var myArray = [
