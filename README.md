@@ -356,16 +356,19 @@ Let's source the best new properties that were created on constructors and integ
 1. Create a vase object which contains an array of flower objects and a `capacity` attribute that says how many flowers the vase can hold.
 
   <details><summary>sample solution</summary>
+
    ```js
    function Vase (capacity){
    	this.capacity = capacity || 12;
    	this.flowers = [];
    }
    ```
+   
   </details>
 
 1. Create a method `placeFlower` that accepts a `Flower` object as a parameter and inserts the flower into the array. What if the vase is too small? Update your method so that it checks whether the vase is already holding its capacity of flowers before it adds the extra flower.
     <details><summary>sample solution</summary>
+
    ```js
    Vase.prototype.placeFlower = function(flower){
      if (this.flowers.length < this.capacity){
@@ -375,10 +378,12 @@ Let's source the best new properties that were created on constructors and integ
      }
    }
    ```
+
   </details>
 
 1. Create an `addWater` method for a vase that calls the `water` method of each flower inside.
     <details><summary>sample solution</summary>
+
    ```js
    Vase.prototype.addWater = function(){
      this.flowers.forEach(function(flower){
@@ -386,6 +391,7 @@ Let's source the best new properties that were created on constructors and integ
      });
    }
    ```
+
   </details>
 
 1. Feel free to add more properties or methods for your `Vase` object type.
